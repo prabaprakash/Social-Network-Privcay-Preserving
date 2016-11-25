@@ -1,0 +1,167 @@
+<html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="css/index.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<body>
+
+
+
+  <div class="container">
+
+
+    <div class="container">
+      <div class="well"><h1 align="center">RESUME BOTS</h1></div>
+    </div>
+
+    <div class="row">
+
+
+      <div class="col-md-4">
+
+        <a href="#seekerlogin"><img data-toggle="modal" data-target="#seekerModal" class="hr img-responsive"  src="images/jobseeker.png"/></a>
+        <div class="caption">LOGIN</div>
+      </div>
+      <div align="center" class="col-md-4">
+
+       <img class="connect img-responsive"  src="images/connect.png"/>
+     </div>
+     
+     <div class="col-md-4">
+
+      <a href="#hrlogin" ><img  data-toggle="modal" data-target="#hrModal"  class="hr img-responsive"  src="images/engine2.gif"/></a>
+      <div class="caption">H.R LOGIN</div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+<!-- H.R LOGIN modal-->
+<div id="hrModal"  class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <div style="height:100px;background:#333; color:#fff; opacity:0.7;"   class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">H.R LOGIN</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="checkbox">
+
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- hr Modal ends-->
+
+
+<!-- job seekerLOGIN modal-->
+<div id="seekerModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <div style="height:100px;background:#333; color:#fff; opacity:0.7;"  class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Job Applicant </h4>
+      </div>
+      <div class="modal-body">
+       <form method="POST" action ="upload.php" enctype="multipart/form-data" role="form">
+        <div class="form-group">
+          <label for="first name">first name:</label>
+          <input type="text" class="form-control" id="fname" name="fname" required="required">
+        </div>
+        <div class="form-group">
+          <label for="last name">last name:</label>
+          <input type="text" class="form-control" id="lname" name="lname" required="required">
+        </div>
+        <div class="form-group">
+          <label for="email id">email id:</label>
+          <input type="email" class="form-control" id="email" name="email" required="required">
+        </div>
+        <div class="form-group">
+          <label for="mobile no">mobile no:</label>
+          <input type="text" class="form-control" id="mobile" name="mobile" required="required">
+        </div>
+        <div class="form-group">
+          <label for="linkedin id">linkedin public url:</label>
+          <input type="text" class="form-control" id="linkedin" name="linkedin" required="required">
+        </div>
+        <div class="form-group">
+          <label for="file">Resume:</label>
+          <input name="fileToUpload" id="fileToUpload" onchange="checkfile(this);" type="file" class="form-control"  required="required">
+        </div>
+        <div class="form-group">
+          <label for="10th">10th %:</label>
+          <input type="text" class="form-control" id="tenth" name="tenth" required="required">
+        </div>
+        <div class="form-group">
+          <label for="12th">12th %:</label>
+          <input type="text" class="form-control" id="twelfth" name="twelfth" required="required">
+        </div>
+        <div class="form-group">
+          <label for="ug">UG %:</label>
+          <input type="text" class="form-control" id="ug" name="ug" required="required">
+        </div>
+        <div class="form-group">
+          <label for="pg">PG %:</label>
+          <input type="text" class="form-control" id="pg" name="pg" required="required">
+        </div>
+          <div class="form-group">
+          <label for="experience">Experience Years:</label>
+          <input type="text" class="form-control" id="experience" name="experience" required="required">
+        </div>
+        
+      </div>
+      
+      
+      
+      <div class="modal-footer">
+        <input name="submit" id="submit"  type="submit"  class="btn btn-default" value="Submit"/>
+      </form>
+      
+    </div>
+  </div>
+</div></div>
+<!--job seeker modal ends-->
+<script type="text/javascript" language="javascript">
+  function checkfile(sender) {
+    var validExts = new Array(".docx", ".doc");
+    var fileExt = sender.value;
+    fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+    if (validExts.indexOf(fileExt) < 0) {
+      alert("Invalid file selected, valid files are of " +validExts.toString() + " types.");
+      return false;
+    }
+    else return true;
+  }
+</script>
+</body>
+
+</html>
