@@ -1,0 +1,13 @@
+R_Graph_Plot.txt
+ install.packages("igraph")
+
+> el[,1]=as.character(el[,1])
+> el[,2]=as.character(el[,2])
+> el=as.matrix(el)
+> g=graph.edgelist(el[,1:2])
+> E(g)$weight=as.numeric(el[,3])
+> plot(g,layout=layout.fruchterman.reingold,edge.width=E(g)$weight/2)
+> g=graph.data.frame(e1,directed = FALSE)
+Error in as.data.frame(d) : object 'e1' not found
+> g=graph.data.frame(el,directed = FALSE)
+> plot(g,layout=layout.fruchterman.reingold,edge.width=E(g)$weight/2)

@@ -1,0 +1,30 @@
+source("F:/MSSE/10 SEM/SOURCE CODE/CreateGraph.R")
+graph1<-CreateGraph()
+graph2<-CreateGraph()
+# CLustering Coefficient
+tr1<-transitivity(graph1)
+tr2<-transitivity(graph2)
+# betweeness
+aa<-betweenness(graph1, v=V(graph1), directed = FALSE)
+bb<-betweenness(graph2, v=V(graph2), directed = FALSE)
+plot( aa, type="o" ,col="red")
+par(new=TRUE)
+plot(bb, type="o", col="green" )
+#par(mfrow=c(1,2))
+#plot( aa)
+#plot( bb)
+# Edge Betweeness
+ea<-edge.betweenness(graph1, e=E(graph1), directed = TRUE)
+eb<-edge.betweenness(graph2, e=E(graph2), directed = TRUE)
+plot( ea, type="o" ,col="red")
+par(new=TRUE)
+plot(eb, type="o", col="green" )
+# Closeness Betweeness
+ca<-closeness(graph1, vids = V(graph1), mode = c("all"))
+cb<-closeness(graph2, vids = V(graph2), mode = c("all"))
+plot( ca, type="o" ,col="red")
+par(new=TRUE)
+plot(cb, type="o", col="green" )
+#Average Path Length
+apa<-average.path.length(graph1, unconnected = TRUE)
+apb<-average.path.length(graph2, unconnected = TRUE)
